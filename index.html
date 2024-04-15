@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- CSS used for div behavior -->
+<link rel="stylesheet" href="Common/mystyles.css">
+
+<!-- Common functions and Shader initialization -->
+<script type="text/javascript" src="Common/MVnew.js"></script>
+<script type="text/javascript" src="Common/initShaders.js"></script>
+
+<!-- Main graphics program -->
+<script type="text/javascript" src="draw.js"></script>
+
+<!-- Simple vertex and fragment shaders -->
+<script id="fragment-shader" type="x-shader/x-fragment">
+#version 300 es
+precision mediump float;
+
+in vec4 vColor;
+out vec4 fColor;
+
+void main()
+{
+	fColor = vColor;
+}
+</script>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+#version 300 es
+
+in vec4 aPosition;
+in vec4 aColor;
+
+out vec4 vColor;
+
+void main()
+{
+	gl_PointSize = 1.0;
+	gl_Position = aPosition;
+	vColor = aColor;
+}
+</script>
+<title>Z BUFFER</title>
+</head>
+
+<body>
+<!-- Two buttons are used to control depth value of a square, 
+		placed on left side of screen -->
+<div class="split left">
+	<div class="center">
+		<div class="tab">
+			Depth of Blue Square <br /> <br />
+			<div class="row">
+				<p>
+					<button id="Button1" class="ud">Closer</button>
+					<button id="Button0" class="ud">Farther</button>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Canvas is on right side of screen -->
+<div class="split right">
+	<div class="center">
+		<canvas id="gl-canvas" width="512" height="512">
+		Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas>
+	</div>
+</div>
+</body>
+</html>

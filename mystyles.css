@@ -1,0 +1,69 @@
+@charset "UTF-8";
+canvas {
+	padding: 0;
+	margin: auto;
+	display: block;
+	width: 512px;
+	height: 512px;
+}
+
+.split {
+	height: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.left {
+	width: 30%;
+	left: 0;
+	background-color: blue;
+	color: white;
+}
+
+.right {
+	width: 70%;
+	right: 0;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.tab {
+	display: table;
+	text-align: center;
+}
+.row {
+	display: table-row;
+}
+
+.col {
+	display: table-column;
+}
+
+label {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 20px;
+	width: 30%;
+	text-align: center;
+}
+
+.ud {
+	display: inline-block;
+	width: 43%;
+	border-radius: 60%;
+}
+
+br {
+	display: table-row;
+}
+
+p {
+	display: table-cell;
+}
